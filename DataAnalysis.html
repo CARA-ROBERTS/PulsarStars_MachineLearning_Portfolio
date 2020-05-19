@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Analysis </title>>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+  body {margin:5px;}
+    
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: lightslategray;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover:not(.active) {
+      background-color: rgb(50, 50, 56);
+      color: white;
+    }
+    
+    .active {
+      background-color: rgb(79, 146, 201);
+      color: white;
+    }
+  </style>
+      <ul>
+        <li><a href="PulsarStars_homePage.html">Pulsar Stars</a></li>
+        <li><a class="active"href="DataAnalysis.html">Data Analysis</a></li>
+        <li><a href="RandomForest.html">Random Forest Model</a></li>
+        <li><a href="NeuralNetworkML.html">Neural Network Model</a></li>
+        <li><a href="MockDataPredictions.html">Mock Data Predictions</a></span>
+        <li><a href="Conclusion.html">Conclusion</a></li>
+      </ul>
+<style>
+  img {
+      width:1600px;
+      height:400px;
+      object-fit: cover;
+        }
+</style>
+<div>
+      <a href="PulsarStars_homePage.html"><img src="PNG/TableauPage.png" ></a>
+</div>
+
+<body>
+  <div class="container-fluid h-100" style="max-width: 1300px;">
+    <div class="row justify-content-center align-items-left h-100">
+  <section>
+  <style>
+  p {
+      margin-bottom: 45px;
+      color: white;
+      text-decoration:line;
+      font-size: 20px;
+      text-align: justify;
+      padding: 14px 16px;
+  }
+   h1 {
+      margin-bottom: 45px;
+      color: lightsteelblue;
+      text-decoration:line;
+      font-size: 120px;
+      text-align: center;
+  }
+  h2 {
+      margin-bottom: 45px;
+      color: white;
+      text-decoration:none;
+      font-size: 50px;
+      text-align: center;
+  }
+  h3 {
+      margin-bottom: 45px;
+      color: white;
+      text-decoration:none;
+      font-size: 20px;
+      text-align: center;
+  }
+  .column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+<h1>Original Star Data Analysis </h1>
+<h2> Analysis of Data Before Trained and Modeled.  </h2>
+<h3><em> </em></h3>
+<div class="row">
+  <div class="column">
+    <image src="PNG/OriginalDATASET.png"style="width:100%;"class="center"></image>
+  </div>
+  <div class="column">
+    <p align=left>Aggregation and visualization  highlight any outlier and bias perspective when analyzing data.    
+          Once undestanding the original dataset, data munging and preprocessing can set to prepare data for 
+          machine learning models. The dataset has eight variable Classifier columns and one predict Target column. The Classifier
+           columns will weight the significance of the data for the prediction. Classifier columns 
+           must be revelant toward the predict Target column result. Any Classifer column not relevant will 
+           dropped during data munging. The one predict Target column in this data set is target_class column. 
+           The target_class columnin this dataset is the Puslar Star. The target_class 
+           column has data of binary 0 or 1 result. Value of 0 equates to
+           No, not a Pulsar Star. Value of 1 equates to Yes, Pulsar Star..
+         </p>
+  </div>
+</div>
+<h2>Aggregation of the Dataset</h2>   
+<div class="row">
+  <div class="column">
+    <p align=right>The Original Star Data contains 9 columns and 17898 rows of data, which is 
+      sufficient amount to have an accurate prejection of analysis, trained data, and prediction
+      model. Each row is a star observation. The higher the star observations the more increases
+      the training ability for better accuracy of the model predictions of Pulsar Stars.
+      More data is beneficial for modeling as long as it is prevail for the target prediction.
+         </p>
+  </div>
+  <div class="column">
+  <image src="PNG/DataDescribe.png"style="width:106%;"class="center"></image>
+  </div>
+</div>
+<h2>Maximum, Mean, Minimum Values of the 8 Classifiers</h2>
+<div class="row">
+  <div class="column">
+    <image src="PNG/MaxMinMean_4DF_predict.png"style="width:100%;"class="center"></image>
+     <p><em> ** DataFrame displays the parameters of each column of the original dataset. </em></p>
+  </div>
+  <div class="column">
+  <image src="PNG/mmm_plt.png"style="width:90%;"class="center"></image>
+  <p><em>Chart with out the Skewness_DM_SNR_curve. The max feature was an outlier for the chart.
+    ( Skewness_DM_SNR_curve = [1191.000837, 104.857709, -1.976976] ) </em></p>
+  </div>
+</div>
+<h2>Total Count and Percentages of Pulsars from the Original Star Data </h2>
+<div class="container-fluid h-100" style="max-width:1100px;">
+  <div class="row justify-content-center align-items-left h-100">   
+    <div class="column">
+      <image src="PNG/AGG_ActualDF.png"style="width:100%;"class="right"></image>
+    </div>
+    <div class="column">  
+      <p align=right><em>This dataframe depicts how rare Pulsar Stars are in star data observations.
+        Since the dataset is comprosed of numerous of stars, the trained model can be more objective
+        in star calcualations. </em></p>
+    </div>
+</div>
+</div>
+
+
+
+  </div>
+</div>
+</body>
+<hr>
+<!--Footer Section-->
+<div>
+<footer class="footer mt-auto py-3">
+<div class="footercontainer">
+
+<li class="text-muted">Developer GitHub Link: <a href = "https://github.com/CARA-ROBERTS/PulsarStars_MachineLearning_Portfolio"
+  class="text-muted">https://github.com/CARA-ROBERTS/PulsarStars_MachineLearning_Portfolio</a></li>
+<li class="text-muted">Datasource: <a href = "https://www.kaggle.com/pavanraj159/predicting-a-pulsar-star#pulsar_stars.csv"
+   class="text-muted">https://www.kaggle.com/pavanraj159/predicting-a-pulsar-star#pulsar_stars.csv</a></li>
+<li class="text-muted" id="footer-text">Developer: Cara Roberts </li>
+  </div>
+</footer>
+</div>
+</html>

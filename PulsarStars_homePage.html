@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pulsar Stars </title>>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+body {margin:0;}
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: lightslategray;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: rgb(50, 50, 56);
+    color: white;
+  }
+  
+  .active {
+    background-color: rgb(79, 146, 201);
+    color: white;
+  }
+</style>
+    <ul>
+      <li><a class="active" href="PulsarStars_homePage.html">Pulsar Stars</a></li>
+      <li><a href="DataAnalysis.html">Data Analysis</a></li>
+      <li><a href="RandomForest.html">Random Forest Model</a></li>
+      <li><a href="NeuralNetworkML.html">Neural Network Model</a></li>
+      <li><a href="MockDataPredictions.html">Mock Data Predictions</a></span>
+      <li><a href="Conclusion.html">Conclusion</a></li>
+    </ul>
+<style>
+  img {
+    width:1600px;
+    height:400px;
+    object-fit: cover;
+  }
+</style>
+<div>
+  <img style='height: 100%; width: 100%; object-fit: cover'/>
+  <a href="PulsarStars_homePage.html"><img src="PNG/HomePageStar.png" ></a>
+</div>
+
+<body>
+<section>
+<div class="container-fluid h-100" style="max-width: 1300px;">
+  <div class="row justify-content-center align-items-left h-100">
+  <style>
+   h1 {
+      margin-bottom: 45px;
+      color: lightsteelblue;
+      text-decoration:line;
+      font-size: 110px;
+      text-align: center;
+  }
+  h2 {
+      margin-bottom: 45px;
+      color: white;
+      text-decoration:none;
+      font-size: 50px;
+      text-align: center;
+  }
+  h3 {
+      margin-bottom: 45px;
+      color: white;
+      text-decoration:none;
+      font-size: 20px;
+      text-align: justify;
+  }
+  .column {
+  float: left;
+  width: 50%;
+  padding: 15px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+    <h1>Predicting Pulsar Stars with Machine Learning </h1>
+    <h2>What are Pulsar Stars?  </h2>
+    <h3><em> Pulsars are a type of neutron star. It is a dense, highly magnetized, and rapidly rotating 
+        star that emits electromagnetic radiation from its magnetic poles. The star's 
+        radiation can only be detected when the radiation beam is focused towards Earth. The rapid
+        rotation of the pulsar star emits the beam towards Earth in a pulse like method. The 
+        star has a precise, small rotation that emits a beam towards Earth in a pulse of
+        milliseconds to seconds.
+      </em></h3>
+    <div class="row">
+      <div class="column">
+      <image src="PNG/PulsarDiagram.png"style="width:100%;"class="center"></image>
+         <p><em> ***Diagram of a Pulsar Star, a Neutron Star becomes a Pulsar when it emits 
+          radiation beam from its magnetic poles. </em></p>
+      </div>
+      <div class="column">
+      <image src="PNG/StarLifeCycle.png"style="width:105%;"class="center"></image>
+      <p><em> ***As visualized, Pulsar Stars are at the end of the Star Life Cylce. Pulsars are
+              remnants of supermassive stars. </em></p>
+      </div>
+    </div>
+    <h2>How can they be predicted?</h2>
+    <h3><em>Pulsar Stars can be determined through different series of Machine Learning methods.
+     Previous star observations from a csv contain data with specific parameters relative to predict 
+     Pulsar and non-Pulsar stars. Through the following pages, two methods of Machine Learning
+     showcase how to predict Pulsars utilizing Python models: a Random Forest and a Neural Network.
+     Python libriaries SKLearn, Tensorflow.keras, and  Random Forest Classifier were intrumental
+     to developing the predict models. Big Data and Machine Learning is pivotal to helping us Earthlings
+     compute the data when we turn our eyes to the skies.
+    </em></h3>    
+    <div class="row">
+      <div class="column">
+      <image src="PNG/Blindsearch.png"style="width:100%;"class="center"></image>
+      <p><em> **The Fermi Gamma-ray Space Telescope's list of colored circles indicate the positions
+         of the new pulsars on one-year all-sky map. Credit:NASA/DOE/Fermi LAT Collaboration</em></p>
+      </div>
+      <div class="column">
+        <image src="PNG/OriginalDATASET.png"style="width:100%;"class="center"></image>
+        <p><em> **Original Data utilized for prediction models.</em></p>
+      </div>
+    </div>  
+    <hr>
+  </div>
+</div>
+</section>
+</body>
+<hr>
+<!--Footer Section-->
+<footer class="footer mt-auto py-3">
+  <div class="footercontainer">
+    <span class="text-muted" id="footer-text">Developer: Cara Roberts </span>
+    <p class="text-muted">Developer GitHub Link: <a href = "https://github.com/CARA-ROBERTS/PulsarStars_MachineLearning_Portfolio"
+      class="text-muted">https://github.com/CARA-ROBERTS/PulsarStars_MachineLearning_Portfolio</a></p>
+    <p class="text-muted">Datasource: <a href = "https://www.kaggle.com/pavanraj159/predicting-a-pulsar-star#pulsar_stars.csv"
+       class="text-muted">https://www.kaggle.com/pavanraj159/predicting-a-pulsar-star#pulsar_stars.csv</a></p>
+    <p class="text-muted">Reference Info: <a href = "https://www.universetoday.com/25376/pulsars/"
+       class="text-muted">https://www.universetoday.com/25376/pulsars/</a></p>    
+    <p class="text-muted">Reference Info: <a href = "https://www.astronomy.stackexchange.com/questions/98/what-causes-a-neutron-star-to-become-a-pulsar"
+       class="text-muted">https://astronomy.stackexchange.com/questions/98/what-causes-a-neutron-star-to-become-a-pulsar</a></p> 
+    <p class="text-muted">Reference Info: <a href = "https://imagine.gsfc.nasa.gov/science/index.html"
+       class="text-muted">https://imagine.gsfc.nasa.gov/science/index.html</a></p>
+  </div>
+</footer>
+</html>

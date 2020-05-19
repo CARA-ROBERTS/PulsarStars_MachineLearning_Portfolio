@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Random Forest Model</title>>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+  body {margin:0;}
+    
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: lightslategray;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover:not(.active) {
+      background-color: rgb(50, 50, 56);
+      color: white;
+    }
+    
+    .active {
+      background-color: rgb(79, 146, 201);
+      color: white;
+    }
+  </style>
+      <ul>
+        <li><a href="PulsarStars_homePage.html">Pulsar Stars</a></li>
+        <li><a href="DataAnalysis.html">Data Analysis</a></li>
+        <li><a class="active"href="RandomForest.html">Random Forest Model</a></li>
+        <li><a href="NeuralNetworkML.html">Neural Network Model</a></li>
+        <li><a href="MockDataPredictions.html">Mock Data Predictions</a></span>
+        <li><a href="Conclusion.html">Conclusion</a></li>
+      </ul>
+
+<style>
+  img {
+      width:1600px;
+      height:400px;
+      object-fit: cover;
+        }
+</style>
+<div>
+      <a href="PulsarStars_homePage.html"><image src="PNG/RFpage.png"></a>
+</div>
+<hr>
+<body>
+  <div class="container-fluid h-100" style="max-width: 1300px;">
+    <div class="row justify-content-center align-items-left h-100">
+  
+  <style>
+   h1 {
+      margin-bottom: 45px;
+      color: lightsteelblue;
+      text-decoration:line;
+      font-size: 120px;
+      text-align: center;
+  }
+  h2 {
+      margin-bottom: 45px;
+      color: white;
+      text-decoration:none;
+      font-size: 50px;
+      text-align: center;
+  }
+  h3 {
+      margin-bottom: 45px;
+      color: white;
+      text-decoration:none;
+      font-size: 20px;
+      text-align: center;
+  }
+  .column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+ .im center
+ .column {
+  float: left;
+  width: 33.3%;
+  padding: 5px;
+}
+</style>
+    <h1>Random Forest Model </h1>
+    <h2>What is a Random Forest?</h2>
+    <h3><p>Definition: </p>
+      <p>A random forest is a meta estimator that fits numerous decision tree classifiers 
+        on various sub-samples of the dataset and uses averaging to improve the predictive
+         accuracy and control over-fitting. </p>
+      <p><a href="scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html</a>
+      </p>
+      <p><em>
+      *The Random Forest is ensemble method from SkLearn library. It shows how 
+        appropriated columns values(classifiers) are relative to feature importance ratios. 
+        So, each individual test has variable of conditions is based on a ratio importance
+        that help determine the predicted result.  It is the based logic that outlines the
+         mathematical process in the final decision and/or prediction.  The CliffsNotes of
+         Machine Learning’s little black box.
+    </em></p></h3>    
+    <div >
+    <h2>Creating a Random Forest for Feature Importance</h2>
+      <image src="PNG/Creating_RF.png"style="width:50%;" ></image>
+      <p><em>The Random Forest Classifier fits the data to weight the column values. By calling
+        rf.feature_importances_, columns values correspond to Feature Importance Ratings.
+      </em></p> 
+    </div>
+    <h2>DataFrame and Chart Feature Importance Ratings</h2>
+    <div class="row">
+      <div class="column">
+      <image src="PNG/RFImportanceDF.png"style="width:80%;"class="right"></image>
+         <p><em> ***Setting dataframe to sort descending rating gives the highest to lowest weighted values.  </em></p>
+      </div>
+      <div class="column">
+      <image src="PNG/HBarChart_FeatureImp.png"style="width:100%;"class="center"></image>
+      <p><em> **Visualization of Feature Importance in descending order.</em></p>
+      </div>
+    </div>
+    <h2>Creating a Random Forest for Predict Model</h2>
+      <div>
+        <image src="PNG/RFModel.png"style="width:55%;
+          object-fit:center;"class="auto"></image>
+        <p><em> </em></p>
+      </div>
+      <div>
+        <image src="PNG/RFpredictResults.png"style="width:75%;"class="center"></image>
+        <p><em> </em></p>
+      </div>
+    <h2>Confusion Matrix to Analyze Predict Results</h2>
+    <h3><em> </em></h3>
+    <div class="row">
+      <div class="column">
+      <image src="PNG/MatrixStats.png"style="width:90%;"class="center"></image>
+         <p><em>**Confusion Matrix Statistics and Describe </em></p>
+      </div>
+      <div class="column">
+      <image src="PNG/ConfusionMatrix_heatMap.png"style="width:85%;"class="center"></image>
+      <p><em> **Confusion Matrix Heatmap </em></p>
+      </div>
+    </div>
+    <h2>Random Forest Model Predictions on a Max/Min/Mean Dataset</h2>
+    <h3><em>
+    </em></h3>    
+    <div >
+      <image src="PNG/MaxMinMean_4DF_predict.png"style="width:60%;"class="center"></image>
+      <p><em></em></p>
+    </div>
+    <div class="row">
+      <div class="im center">
+      <p><em> </em></p>
+      </div>
+      <div class="im center">
+        <image src="PNG/RFpredictionDF.png"style="width:90%;height:90%;"class="center"></image>
+        <p><em> **Original Data utilized for prediction models.</em></p>
+      </div>
+      <div class="im center">
+        
+        <p><em> </em></p>
+      </div>
+    </div>  
+    <hr>
+
+ </div>
+ </div>
+</body>
+
+
+<!--Footer Section-->
+<div>
+  <footer class="footer mt-auto py-3">
+  <div class="footercontainer">
+  
+  <li class="text-muted">Developer GitHub Link: <a href = "https://github.com/CARA-ROBERTS/PulsarStars_MachineLearning_Portfolio"
+    class="text-muted">https://github.com/CARA-ROBERTS/PulsarStars_MachineLearning_Portfolio</a></li>
+  <li class="text-muted">Datasource: <a href = "https://www.kaggle.com/pavanraj159/predicting-a-pulsar-star#pulsar_stars.csv"
+     class="text-muted">https://www.kaggle.com/pavanraj159/predicting-a-pulsar-star#pulsar_stars.csv</a></li>
+  <li class="text-muted" id="footer-text">Developer: Cara Roberts </li>
+    </div>
+  </footer>
+  </div>
+  </html>
