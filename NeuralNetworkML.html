@@ -53,6 +53,7 @@
         <li><a class="active"href="NeuralNetworkML.html">Neural Network Model</a></li>
         <li><a href="MockDataPredictions.html">Mock Data Predictions</a></span>
         <li><a href="Conclusion.html">Conclusion</a></li>
+        <li><a href="aboutMe.html">About Me</a></li>
       </ul>
 <style>
   img {
@@ -97,7 +98,12 @@
           color: white;
           text-decoration:none;
           font-size: 20px;
-          text-align: center;
+          text-align: left;
+      }
+      ul.no-bullets {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
       }
       .column {
       float: left;
@@ -118,72 +124,154 @@
     }
     </style>
     <h1>Neural Network Model</h1>
-    <h2>Read Data, Preprocess, and Build a Model</h2>
+    <hr>
+    <h2>What is a Neural Network in Machine Learning?</h2>
+    <div class="row">
+      <div class="column">
+        <image src="PNG/neuralDiagram.png"style="width:100%;"class="center"></image>
+      </div>
+      <div class="column">
+        <p>Machine Learning's deep learning is known as Neural Network Model. The model is
+        a series of algorithms computed for outcome that resemble processing networks of the
+        human brain. Each model can be simple or complex depending on the number of hidden layers
+        between the input layer and the output layer. In the diagram to the left, it displays
+        number of inputs in the first layer, one hidden layer, and two possible outputs. The raw 
+        data is labeled into vectors of patterns through each hidden layer. Alike Random Forest,
+        Neural Networks also have weight features that put a variation of algorithms based on the vector.
+        Each layer contributes to the fitting the model for optimal accuracy of outcomes.
+        </p>
+      </div>
+    </div>
+    <hr>
+    <h2> Preprocessing for a Neural Network Model</h2>
     <h3><em> </em></h3>
     <div class="row">
       <div class="column">
-        <image src="PNG/OriginalDATASET.png"style="width:100%;"class="center"></image>
+        <image src="PNG/LinearRegression_scaledScatterDF.png"style="width:100%;"class="center"></image>
+        <em>Scatter Plot of Scaled Star Data Linear Regression to display importance to 
+          scale all data for easier computations for any machine learning models.
+        </em>
+        <hr>
+        <image src="PNG/NN_PrepCode.png"style="width:100%;"class="center"></image>
       </div>
       <div class="column">
-        <p align=left>Aggregation and visualization  highlight any outlier and bias perspective when analyzing data.    
-              Once undestanding the original dataset, data munging and preprocessing can set to prepare data for 
-              machine learning models. The dataset has eight variable Classifier columns and one predict Target column. The Classifier
-               columns will weight the significance of the data for the prediction. Classifier columns 
-               must be revelant toward the predict Target column result. Any Classifer column not relevant will 
-               dropped during data munging. The one predict Target column in this data set is target_class column. 
-               The target_class columnin this dataset is the Puslar Star. The target_class 
-               column has data of binary 0 or 1 result. Value of 0 equates to
-               No, not a Pulsar Star. Value of 1 equates to Yes, Pulsar Star..
-             </p>
+        <p align=left>	 Pandas operates by reading in the revised csv data and additional
+          data clean up. This process was showcased on the Data Analysis page. </p>
+        <p align=left>	This is followed by Preprocessing the dataset with multiple 
+        functions of SkLearn.</p> 
+        <p align=left>	 SkLearn train_test_split function is essential to parse out
+         the data into two subsets. Each subset includes 75% for training data and 25% for
+         testing data. </p>
+        <p align=left> 	Sklean MinMaxScaler scales and standardize the data for better
+           processing to put into Neural Network. </p>
+        <p align=left>  	SkLearn LabelEncoder converts all data to normalize labels. Also,
+           the function transforms any non-numerical to numerical. This coincides with the 
+           next function by Tensorflow Keras. </p>
+        <p align=left>  	Once all labels are numerical, Tensorflow Keras to_categorical 
+          coverts those integers to a binary matrix for computation. </p>  
       </div>
     </div>
-    <h2>Aggregation of the Dataset</h2>   
+    <hr>
+    <h2>Ready to the  Neural Network Model!</h2>   
     <div class="row">
       <div class="column">
-        <p align=right>The Original Star Data contains 9 columns and 17898 rows of data, which is 
-          sufficient amount to have an accurate prejection of analysis, trained data, and prediction
-          model. Each row is a star observation. The higher the star observations the more increases
-          the training ability for better accuracy of the model predictions of Pulsar Stars.
-          More data is beneficial for modeling as long as it is prevail for the target prediction.
-             </p>
+        <image src="PNG/NN_Layers.png"style="width:100%;"class="center"></image>
+        <em>* Model Layers Specs with out over fitting the model.</em>
+        <hr>
+        <image src="PNG/NN_Summary.png"style="width:100%;"class="center"></image>
+        <em>* Summary of Compiled Model </em>
+        <hr>
+        <image src="PNG/NN_Train.png"style="width:100%;"class="center"></image>
+        <em>* Model training based on 20 epochs.</em>
       </div>
       <div class="column">
-      <image src="PNG/DataDescribe.png"style="width:106%;"class="center"></image>
+        <h3 align=left>Tensorflow Keras will build the model</h3>
+          <h4 align=left>  	Functions of tensorflow.keras.models</h4>
+          <h5 align=left>  •	model = Sequential() </h5>	
+          <h4 align=left><em> *creates the initial model</em> </h4>  
+        <p></p>
+          <h4 align=left>  	Functions of tensorflow.keras.layers import Dense</h4> 
+          <h5 align=left>  •	model.add(Dense(units=24, activation='relu', input_dim=8))</h5>
+          <h5 align=left>  •	model.add(Dense(units=24, activation='relu'))</h5>
+          <h5 align=left>  •	model.add(Dense(units=2, activation='softmax'))</h5>
+          <h4 align=left><em> *	Adds input layer, hidden layers, and output(classifier layer)</em></h4>
+        <p></p>
+          <h4 align=left>  	Functions to compile model (algorithm)</h3>
+          <h5 align=left>  •	model.compile(optimizer='adam', (basic learning rate .001 with beta1 float close to 1)
+          <h5 align=left>  •	loss='categorical_crossentropy', (opt binary_crossentropy )
+          <h5 align=left>  •	metrics=['accuracy'])
+        <p></p>
+          <h4 align=left>  	Functions to fit model (training the model)
+          <h5 align=left>  •	model.fit(
+          <h5 align=left>  •	    X_train_scaled,
+          <h5 align=left>  •	    y_train_categorical,
+          <h5 align=left>  •	    epochs=20,
+          <h5 align=left>  •	    shuffle=True,
+          <h5 align=left>  •	    verbose=2
+        <p></p>
+          <h4 align=left>   	Function to Evaluate for accuracy 
+          <h5 align=left>   •	model_loss, model_accuracy = model.evaluate(
+          <h5 align=left>   •	    X_test_scaled, y_test_categorical, verbose=2)
+        <p></p>         
+          <h4 align=left>   	Save that model!
+          <h5 align=left>   •	model.save("PulsarStar_NN_Model.h5")</p>
+        <p><em>**Neural Net models are more dynamic in the abililty to adjust the input, 
+              hidden, output layers with number of hidden nodes and type of activation.
+              Also, the model can be adjusted how it is compiled based on how its optimized, loss, and
+              metrics style. Further depths on model fitting specifications tell the created model
+              how to train on the given dataset with shuffle and amount of epochs.
+              Each methodically step in the building model process can be adjusted for optimal results.
+            </em></p>
       </div>
     </div>
-    <h2>Maximum, Mean, Minimum Values of the 8 Classifiers</h2>
+    <hr>
+    <h2>Model Accuracy and Predict Outcome on Test Data</h2>
     <div class="row">
       <div class="column">
-        <image src="PNG/MaxMinMean_4DF_predict.png"style="width:100%;"class="center"></image>
-         <p><em> ** DataFrame displays the parameters of each column of the original dataset. </em></p>
+        <image src="PNG/NNmodelAccuracy.png"style="width:100%;"class="center"></image>
+         <p><em> *Accuracy is efficiently high without signs of over fitting, </em></p>
       </div>
       <div class="column">
-      <image src="PNG/mmm_plt.png"style="width:90%;"class="center"></image>
-      <p><em>Chart with out the Skewness_DM_SNR_curve. The max feature was an outlier for the chart.
-        ( Skewness_DM_SNR_curve = [1191.000837, 104.857709, -1.976976] ) </em></p>
+      <image src="PNG/predictResults.png"style="width:90%;"class="center"></image>
+      <p><em>Prediction and Actual Outcome print out. </em></p>
       </div>
     </div>
-    <h2>Total Count and Percentages of Pulsars from the Original Star Data </h2>
-    <div class="container-fluid h-100" style="max-width:1100px;">
-      <div class="row justify-content-center align-items-left h-100">   
-        <div class="column">
-          <image src="PNG/AGG_ActualDF.png"style="width:100%;"class="right"></image>
-        </div>
-        <div class="column">  
-          <p align=right><em>This dataframe depicts how rare Pulsar Stars are in star data observations.
-            Since the dataset is comprosed of numerous of stars, the trained model can be more objective
-            in star calcualations. </em></p>
-        </div>
+    <hr>
+    <h2>Total Count and Percentages of Pulsars Neural Net Predictions </h2>
+    <div class="row">   
+      <div class="column">
+        <image src="PNG/AGG_PredictDF.png"style="width:100%;"class="right"></image>
+      </div>
+      <div class="column">
+        <image src="PNG/doubleAxis_predict.png"style="width:100%;"class="right"></image>
+      </div>
     </div>
+    <hr>
+    <h2>Aggregated Percentages of Actual and Predictive Outcomes</h2>
+    <div class="row"> 
+      <div class="column">
+        <image src="PNG/AGG_ComparisonDF.png"style="width:100%;"class="right"></image>
+      </div>
+      <div class="column">
+        <image src="PNG/CompBarChart.png"style="width:100%;"class="right"></image>
+      </div>
     </div>
+  </div>
+</div>
   </section>
 </body>
+<hr>
 <!--Footer Section-->
-<footer class="footer mt-auto py-3">
+<div>
+  <footer class="footer mt-auto py-3">
   <div class="footercontainer">
-    <span class="text-muted" id="footer-text">Project by: Andrew McKinney, Carrie McDowell, David Winton, JoTing Wong, and Cara Roberts </span>
-    <p class="text-muted">Datasource: Credit_Data_Original.CVS </p>
- 
+  
+  <li class="text-muted">Developer GitHub Link: <a href = "https://github.com/CARA-ROBERTS/PulsarStars_MachineLearning_Portfolio"
+    class="text-muted">https://github.com/CARA-ROBERTS/PulsarStars_MachineLearning_Portfolio</a></li>
+  <li class="text-muted">Datasource: <a href = "https://www.kaggle.com/pavanraj159/predicting-a-pulsar-star#pulsar_stars.csv"
+     class="text-muted">https://www.kaggle.com/pavanraj159/predicting-a-pulsar-star#pulsar_stars.csv</a></li>
+  <li class="text-muted" id="footer-text">Developer: Cara Roberts </li>
+    </div>
+  </footer>
   </div>
-</footer>
-</html>
+  </html>

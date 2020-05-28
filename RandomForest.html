@@ -52,6 +52,7 @@
         <li><a href="NeuralNetworkML.html">Neural Network Model</a></li>
         <li><a href="MockDataPredictions.html">Mock Data Predictions</a></span>
         <li><a href="Conclusion.html">Conclusion</a></li>
+        <li><a href="aboutMe.html">About Me</a></li>
       </ul>
 
 <style>
@@ -64,12 +65,23 @@
 <div>
       <a href="index.html"><image src="PNG/RFpage.png"></a>
 </div>
+
 <hr>
 <body>
-  <div class="container-fluid h-100" style="max-width: 1300px;">
+<selection>
+  <div class="container-fluid h-100" style="max-width: 1200px;">
     <div class="row justify-content-center align-items-left h-100">
   
   <style>
+    p {
+      margin-bottom: 45px;
+      color: white;
+      text-decoration:line;
+      font-size: 20px;
+      text-align: justify;
+      padding: 10px 14px;
+  }
+  
    h1 {
       margin-bottom: 45px;
       color: lightsteelblue;
@@ -108,40 +120,43 @@ image {
   margin-left: auto;
   margin-right: auto;
 }
- .im center
- .column {
-  float: left;
-  width: 33.3%;
-  padding: 5px;
-}
+
 </style>
+
     <h1>Random Forest Model </h1>
+    <hr>
     <h2>What is a Random Forest?</h2>
-    <h3><p>Definition: </p>
-      <p>A random forest is a meta estimator that fits numerous decision tree classifiers 
+ 
+      <h3>A random forest is a meta estimator that fits numerous decision tree classifiers 
         on various sub-samples of the dataset and uses averaging to improve the predictive
-         accuracy and control over-fitting. </p>
-      <p><a href="scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html</a>
-      </p>
-      <p><em>
-      *The Random Forest is ensemble method from SkLearn library. It shows how 
+         accuracy and control over-fitting. </h3>
+      <h3><a href="scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html</a>
+      </h3>
+    <hr>
+    <div >
+    <h2>Creating a Random Forest for Feature Importance</h2>
+    <div class="row">
+      <div class="column">
+      <image src="PNG/Creating_RF.png"style="width:100%;" ></image>
+      </div>
+      <div class="column">
+      <p align=left> *The Random Forest is ensemble method from SkLearn library. It shows how 
         appropriated columns values(classifiers) are relative to feature importance ratios. 
         So, each individual test has variable of conditions is based on a ratio importance
         that help determine the predicted result.  It is the based logic that outlines the
          mathematical process in the final decision and/or prediction.  The CliffsNotes of
-         Machine Learning’s little black box.
-    </em></p></h3>    
-    <div >
-    <h2>Creating a Random Forest for Feature Importance</h2>
-      <image src="PNG/Creating_RF.png"style="width:50%;" ></image>
-      <p><em>The Random Forest Classifier fits the data to weight the column values. By calling
-        rf.feature_importances_, columns values correspond to Feature Importance Ratings.
-      </em></p> 
+         Machine Learning’s little black box.</p>
+      <p align=left> *The Random Forest Classifier fits the data to weight the column values. By calling
+        rf.feature_importances_, columns values correspond to Feature Importance Ratings. 
+      </p> 
+      </div>
     </div>
+    </div>
+    <hr>
     <h2>DataFrame and Chart Feature Importance Ratings</h2>
     <div class="row">
       <div class="column">
-      <image src="PNG/RFImportanceDF.png"style="width:80%;"class="right"></image>
+      <image src="PNG/RFImportanceDF.png"style="width:100%;"class="right"></image>
          <p><em> ***Setting dataframe to sort descending rating gives the highest to lowest weighted values.  </em></p>
       </div>
       <div class="column">
@@ -149,55 +164,87 @@ image {
       <p><em> **Visualization of Feature Importance in descending order.</em></p>
       </div>
     </div>
+    <hr>
     <h2>Creating a Random Forest for Predict Model</h2>
-      <div>
-        <image src="PNG/RFModel.png"style="width:55%;
+    <div class="row">
+      <div class="column" align=left >
+        <image src="PNG/RFModel.png"style="width:100%;
           object-fit:center;"class="auto"></image>
-        <p><em> </em></p>
+        <p>The predicted outcome (y_pred) of the model can then be compared to the actual 
+          outcome (y_test) of Pulsar Stars. The accuracy of model can be scored by the 
+          comparison. The Random Forest model scored an excellent accuracy of approximately
+           98% on the test data. The accuracy should be as close to 100% without reaching
+            100%. Any perfect score reflects an overfitted model. An overfitted model can
+             have a lower accuracy for a new dataset prediction, thus an ineffective model.</p>
       </div>
-      <div>
-        <image src="PNG/RFpredictResults.png"style="width:75%;"class="center"></image>
-        <p><em> </em></p>
+      <div class="column" align=right>
+        <p>Initial set up for Random Forest prediction model starts with setting the "x" 
+          variable with all columns (classifiers) and data without the target predict column (Pulsar
+          Stars). The "y" variable consists only the target predict column (Pulsar Star).
+          With the "X" and "y" set, the train_test_split can be conducted across the dataset.
+          A 75% train data and 25% test is utilized for the model.  The Random Forest classifiers
+          are set to 100 estimators, then fit to the train data. The same Random Forest classifiers
+          are then called to predict on test data.
+        </p>
+      
+        <image src="PNG/RFpredictResults.jpg"style="width:100%;"class="center"></image>
       </div>
+    </div>  
+    <hr>
     <h2>Confusion Matrix to Analyze Predict Results</h2>
-    <h3><em> </em></h3>
+    <h3><em>The confusion matrix is an indepth method to analyze the Pulsar Stars predicted 
+      result. Retrieving the statistics of the confusion matrix, TP(true positive), FP(false positive),
+      TN(true negative), and FN (false negative) are important method  to further analyze 
+      the predict results. Higher TP (true positives) and TN(true negatives) than 
+      FP (false positives) and FN (false negative) showcase a more acurrate model.
+    FP and FN should as low as possible for optimal results for predictions. The Seaborn 
+    generated Confusion Matrix Heatmap visualizes the TP, FP, TN, and FN with the parameters
+   of 0 (not Pulsar), 1 (Pulsar) and all results.</em></h3>
     <div class="row">
       <div class="column">
       <image src="PNG/MatrixStats.png"style="width:90%;"class="center"></image>
          <p><em>**Confusion Matrix Statistics and Describe </em></p>
       </div>
       <div class="column">
-      <image src="PNG/ConfusionMatrix_heatMap.png"style="width:85%;"class="center"></image>
+      <image src="PNG/ConfusionMatrix_heatMap.png"style="width:100%;"class="center"></image>
       <p><em> **Confusion Matrix Heatmap </em></p>
       </div>
     </div>
-    <h2>Random Forest Model Predictions on a Max/Min/Mean Dataset</h2>
+    <hr>
+    <h2>Random Forest Model Predictions on a </h2> 
+    <h2>Max/Min/Mean Dataset</h2>
     <h3><em>
     </em></h3>    
-    <div >
-      <image src="PNG/MaxMinMean_4DF_predict.png"style="width:60%;"class="center"></image>
-      <p><em></em></p>
-    </div>
     <div class="row">
-      <div class="im center">
-      <p><em> </em></p>
+      <div class="column">
+        <image src="PNG/MaxMinMean_4DF_predict.png"style="width:100%;"class="center"></image>
       </div>
-      <div class="im center">
-        <image src="PNG/RFpredictionDF.png"style="width:90%;height:90%;"class="center"></image>
-        <p><em> **Original Data utilized for prediction models.</em></p>
+      <div class="column">
+        <p align=left> The Max, Mean, and Min  of the classifers are the parameters of 
+          the original star data. Creating a new DataFrame to hold this data, then pivot the 
+          DataFrame in order to satisfy condition use the predict moodel.  Pulsar Star outcome
+          can then be predicted based one the orignal data parameters. This will give more insight
+          to the effect on prediction outcome derived from the conditions of the Star Data input.
+          The Max and Mean have a higher numerical input, and the predictive corresponds an 
+          outcome of Pulsar Star. The Min has a low numerical input, and predictive outcome is Not 
+          Pulsar Star. More Mock data is needed to test the viability that the higher the input 
+          star data will result in a Pulsar Star. This will be compared in the Neural Network Model. 
+          Further testing results in the Mock Data Predictions will analyze whether the higher numerical values
+          have effect on Pulsar Star outcomes.
+        </p>
       </div>
-      <div class="im center">
-        
-        <p><em> </em></p>
-      </div>
-    </div>  
+      <div class="column">
+        <image src="PNG/RFpredictionDF.jpg"style="width:180%;height:100%;"class="center"></image>
+        <p><em> **Aggregated data utilized for modeled predictions.</em></p>
+      </div>  
     <hr>
-
+    </div>
  </div>
  </div>
+</section>
 </body>
 
-
+<hr>
 <!--Footer Section-->
 <div>
   <footer class="footer mt-auto py-3">

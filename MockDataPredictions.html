@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <style>
+
   body {margin:0;}
     
     ul {
@@ -52,6 +53,7 @@
         <li><a href="NeuralNetworkML.html">Neural Network Model</a></li>
         <li><a class="active" href="MockDataPredictions.html">Mock Data Predictions</a></span>
         <li><a href="Conclusion.html">Conclusion</a></li>
+        <li><a href="aboutMe.html">About Me</a></li>s
       </ul>
 <style>
   img {
@@ -63,11 +65,13 @@
 <div>
       <a href="index.html"><img src="PNG/MockHeader.png" ></a>
 </div>
+<hr>
 <body>
   <div class="container-fluid h-100" style="max-width: 1300px;">
     <div class="row justify-content-center align-items-left h-100">
   <section>
   <style>
+    
   p {
       margin-bottom: 45px;
       color: white;
@@ -115,69 +119,98 @@ image {
   margin-right: auto;
 }
 </style>
-<h1>Original Star Data Analysis </h1>
-<h2> Analysis of Data Before Trained and Modeled.  </h2>
+<h1>Mock Datasets' Predictions </h1>
+<hr>
+<h2> Statistics from the Original Dataset for Neural Net Model Predictions </h2>
 <h3><em> </em></h3>
 <div class="row">
   <div class="column">
-    <image src="PNG/OriginalDATASET.png"style="width:100%;"class="center"></image>
+    <image src="PNG/DataDescribe.png"style="width:100%;"class="center"></image>
+    <p align=left>The remaning dataset showcases the 
+      the data parameters throughout the original dataset. The saved neural (from the 
+      previous page) net model will predit Pulsar Stars based on each parameter. </p>
   </div>
   <div class="column">
-    <p align=left>Aggregation and visualization  highlight any outlier and bias perspective when analyzing data.    
-          Once undestanding the original dataset, data munging and preprocessing can set to prepare data for 
-          machine learning models. The dataset has eight variable Classifier columns and one predict Target column. The Classifier
-           columns will weight the significance of the data for the prediction. Classifier columns 
-           must be revelant toward the predict Target column result. Any Classifer column not relevant will 
-           dropped during data munging. The one predict Target column in this data set is target_class column. 
-           The target_class columnin this dataset is the Puslar Star. The target_class 
-           column has data of binary 0 or 1 result. Value of 0 equates to
-           No, not a Pulsar Star. Value of 1 equates to Yes, Pulsar Star..
-         </p>
+    <p align=left> The Statistic DataFrame was created from the function .describe() on
+       Original Star Dataframe. Some data munging cleared the irrelevent rows of Count and STD
+       (Standard Deviation), along with the Pulsar Column. 
+    </p>
+    <image src="PNG/MockStatPred.png"style="width:100%;"class="center"></image>
+  </div>
+  <div class="column">
+    <image src="PNG/Statistic.png"style="width:100%;"class="center"></image>
+    <p align=left>A double axis bar and line chart visualizes the prediction results based
+      on the Pulsar Star original dataset parameters. The blue bar represents Pulsar star
+      prediction and color line is classifiers value data.
+      <em>The chart is without the column, Skewness_DM_SNR_curve, the max feature was an outlier for the chart
+        #Skewness_DM_SNR_curve = [104.857709, -1.976976, 34.960504, 83.064556, 139.309331, 
+        1191.000837]</em>
+    </p>
+
+  </div>
+  <div class="column">
+    <p align=left>Once the predict model prints results are set to the predict variable,
+       the Pulsar predict column with the model predict results can be adding to the
+        new Statistic DataFrame . 
+    </p>
+    <image src="PNG/MockStatPredOutcome.png"style="width:100%;"class="center"></image>
   </div>
 </div>
-<h2>Aggregation of the Dataset</h2>   
+<p>**Given the DataFrame results and Chart visualiztion, assumption of the predictive 
+  result of a Pulsar Star will likely occur the greater the numerical value of the star data observations.
+  Further mock datasets and prediction needed to validate this assumption.**
+
+</p>
+<hr>
+<h2> Building a Mock Dataset</h2>   
 <div class="row">
   <div class="column">
-    <p align=right>The Original Star Data contains 9 columns and 17898 rows of data, which is 
-      sufficient amount to have an accurate prejection of analysis, trained data, and prediction
-      model. Each row is a star observation. The higher the star observations the more increases
-      the training ability for better accuracy of the model predictions of Pulsar Stars.
-      More data is beneficial for modeling as long as it is prevail for the target prediction.
-         </p>
+    <p align=right>In order build a true mock dataset to predict accurately from the 
+      saved Neural Net Model, the Max and Min params were pulled form the original dataset.
+    </p>
+    <image src="PNG/MockDF.png"style="width:100%;"class="center"></image>
   </div>
   <div class="column">
-  <image src="PNG/DataDescribe.png"style="width:106%;"class="center"></image>
+  <image src="PNG/MaxMinParams_4MockDF.png"style="width:100%;"class="center"></image>
+    <p align=left>Setting random data between the max/min params will ensure realistic 
+      and probable star data observation. This mock dataset represents possible star observation
+      to predict real viability of determining Pulsar Stars.
+    </p>
   </div>
 </div>
-<h2>Maximum, Mean, Minimum Values of the 8 Classifiers</h2>
+<hr>
+<h2>Mock Dataset For Neural Net Model Predictions</h2>
 <div class="row">
   <div class="column">
-    <image src="PNG/MaxMinMean_4DF_predict.png"style="width:100%;"class="center"></image>
-     <p><em> ** DataFrame displays the parameters of each column of the original dataset. </em></p>
+    <image src="PNG/MockDF_toPredict.png"style="width:100%;"class="center"></image>
+    <hr>
+ </div>
+  <div class="column">
+    <p align=left> The saved neural net model is utilized on the Mock DataFrame with function
+      model.predict_classes(mockDF[:]). This function predicts Pulsar Star outcomes on each 
+      observational row of star data.</p>
+    <p align=left>The Pulsar Stars predictions has mixed results across mock stars observation
+      data. Although the Mock DataFrame has only 10  star observations and preditive
+       results, the variation of the star data and mixed Pulsar predictions  gives
+       perspective that the greater the numerical value has no relevence to whether the
+       predict result is a Pulsar Star or not.
+
+    </p> 
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <image src="PNG/BarLineChart_Mock2Predict.png"style="width:100%;"class="center"></image>
+    <h4>A double axis bar and line chart visualizes the prediction results based
+      on the Pulsar Star Mock DataFrame. The blue bar represents Pulsar star
+      prediction and color line is classifiers value data.</h4>
   </div>
   <div class="column">
-  <image src="PNG/mmm_plt.png"style="width:90%;"class="center"></image>
-  <p><em>Chart with out the Skewness_DM_SNR_curve. The max feature was an outlier for the chart.
-    ( Skewness_DM_SNR_curve = [1191.000837, 104.857709, -1.976976] ) </em></p>
+    <image src="PNG/Mock_Plot_Legend.png"style="width:50%;"class="center"></image>
   </div>
 </div>
-<h2>Total Count and Percentages of Pulsars from the Original Star Data </h2>
-<div class="container-fluid h-100" style="max-width:1100px;">
-  <div class="row justify-content-center align-items-left h-100">   
-    <div class="column">
-      <image src="PNG/AGG_ActualDF.png"style="width:100%;"class="right"></image>
-    </div>
-    <div class="column">  
-      <p align=right><em>This dataframe depicts how rare Pulsar Stars are in star data observations.
-        Since the dataset is comprosed of numerous of stars, the trained model can be more objective
-        in star calcualations. </em></p>
-    </div>
+
 </div>
-</div>
-
-
-
-  </div>
 </div>
 </body>
 <hr>
