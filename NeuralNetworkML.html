@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Neural Network Model</title>>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+  body {margin:0;}
+    
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: lightslategray;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover:not(.active) {
+      background-color: rgb(50, 50, 56);
+      color: white;
+    }
+    
+    .active {
+      background-color: rgb(79, 146, 201);
+      color: white;
+    }
+  </style>
+      <ul>
+        <li><a href="index.html">Pulsar Stars</a></li>
+        <li><a href="DataAnalysis.html">Data Analysis</a></li>
+        <li><a href="RandomForest.html">Random Forest Model</a></li>
+        <li><a class="active"href="NeuralNetworkML.html">Neural Network Model</a></li>
+        <li><a href="MockDataPredictions.html">Mock Data Predictions</a></span>
+        <li><a href="Conclusion.html">Conclusion</a></li>
+        <li><a href="aboutMe.html">About Me</a></li>
+      </ul>
+<style>
+  img {
+      width:1600px;
+      height:400px;
+      object-fit: cover;
+        }
+</style>
+<div>
+      <a href="index.html"><img src="PNG/NNHeader.png" ></a>
+</div>
+<hr>
+<body>
+<section>
+<div class="container-fluid h-100" style="max-width: 1300px;">
+  <div class="row justify-content-center align-items-left h-100">
+      <style>
+      p {
+          margin-bottom: 45px;
+          color: white;
+          text-decoration:line;
+          font-size: 20px;
+          text-align: justify;
+          padding: 14px 16px;
+      }
+       h1 {
+          margin-bottom: 45px;
+          color: lightsteelblue;
+          text-decoration:line;
+          font-size: 120px;
+          text-align: center;
+      }
+      h2 {
+          margin-bottom: 45px;
+          color: white;
+          text-decoration:none;
+          font-size: 50px;
+          text-align: center;
+      }
+      h3 {
+          margin-bottom: 45px;
+          color: white;
+          text-decoration:none;
+          font-size: 20px;
+          text-align: left;
+      }
+      ul.no-bullets {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+      }
+      .column {
+      float: left;
+      width: 50%;
+      padding: 5px;
+    }
+    
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    </style>
+    <h1>Neural Network Model</h1>
+    <hr>
+    <h2>What is a Neural Network in Machine Learning?</h2>
+    <div class="row">
+      <div class="column">
+        <image src="PNG/neuralDiagram.png"style="width:100%;"class="center"></image>
+      </div>
+      <div class="column">
+        <p>Machine Learning's deep learning is known as Neural Network Model. The model is
+        a series of algorithms computed for outcome that resemble processing networks of the
+        human brain. Each model can be simple or complex depending on the number of hidden layers
+        between the input layer and the output layer. In the diagram to the left, it displays
+        number of inputs in the first layer, one hidden layer, and two possible outputs. The raw 
+        data is labeled into vectors of patterns through each hidden layer. Alike Random Forest,
+        Neural Networks also have weight features that put a variation of algorithms based on the vector.
+        Each layer contributes to the fitting the model for optimal accuracy of outcomes.
+        </p>
+      </div>
+    </div>
+    <hr>
+    <h2> Preprocessing for a Neural Network Model</h2>
+    <h3><em> </em></h3>
+    <div class="row">
+      <div class="column">
+        <image src="PNG/LinearRegression_scaledScatterDF.png"style="width:100%;"class="center"></image>
+        <em>Scatter Plot of Scaled Star Data Linear Regression to display importance to 
+          scale all data for easier computations for any machine learning models.
+        </em>
+        <hr>
+        <image src="PNG/NN_PrepCode.png"style="width:100%;"class="center"></image>
+      </div>
+      <div class="column">
+        <p align=left>	 Pandas operates by reading in the revised csv data and additional
+          data clean up. This process was showcased on the Data Analysis page. </p>
+        <p align=left>	This is followed by Preprocessing the dataset with multiple 
+        functions of SkLearn.</p> 
+        <p align=left>	 SkLearn train_test_split function is essential to parse out
+         the data into two subsets. Each subset includes 75% for training data and 25% for
+         testing data. </p>
+        <p align=left> 	Sklean MinMaxScaler scales and standardize the data for better
+           processing to put into Neural Network. </p>
+        <p align=left>  	SkLearn LabelEncoder converts all data to normalize labels. Also,
+           the function transforms any non-numerical to numerical. This coincides with the 
+           next function by Tensorflow Keras. </p>
+        <p align=left>  	Once all labels are numerical, Tensorflow Keras to_categorical 
+          coverts those integers to a binary matrix for computation. </p>  
+      </div>
+    </div>
+    <hr>
+    <h2>Ready to the  Neural Network Model!</h2>   
+    <div class="row">
+      <div class="column">
+        <image src="PNG/NN_Layers.png"style="width:100%;"class="center"></image>
+        <em>* Model Layers Specs with out over fitting the model.</em>
+        <hr>
+        <image src="PNG/NN_Summary.png"style="width:100%;"class="center"></image>
+        <em>* Summary of Compiled Model </em>
+        <hr>
+        <image src="PNG/NN_Train.png"style="width:100%;"class="center"></image>
+        <em>* Model training based on 20 epochs.</em>
+      </div>
+      <div class="column">
+        <h3 align=left>Tensorflow Keras will build the model</h3>
+          <h4 align=left>  	Functions of tensorflow.keras.models</h4>
+          <h5 align=left>  •	model = Sequential() </h5>	
+          <h4 align=left><em> *creates the initial model</em> </h4>  
+        <p></p>
+          <h4 align=left>  	Functions of tensorflow.keras.layers import Dense</h4> 
+          <h5 align=left>  •	model.add(Dense(units=24, activation='relu', input_dim=8))</h5>
+          <h5 align=left>  •	model.add(Dense(units=24, activation='relu'))</h5>
+          <h5 align=left>  •	model.add(Dense(units=2, activation='softmax'))</h5>
+          <h4 align=left><em> *	Adds input layer, hidden layers, and output(classifier layer)</em></h4>
+        <p></p>
+          <h4 align=left>  	Functions to compile model (algorithm)</h3>
+          <h5 align=left>  •	model.compile(optimizer='adam', (basic learning rate .001 with beta1 float close to 1)
+          <h5 align=left>  •	loss='categorical_crossentropy', (opt binary_crossentropy )
+          <h5 align=left>  •	metrics=['accuracy'])
+        <p></p>
+          <h4 align=left>  	Functions to fit model (training the model)
+          <h5 align=left>  •	model.fit(
+          <h5 align=left>  •	    X_train_scaled,
+          <h5 align=left>  •	    y_train_categorical,
+          <h5 align=left>  •	    epochs=20,
+          <h5 align=left>  •	    shuffle=True,
+          <h5 align=left>  •	    verbose=2
+        <p></p>
+          <h4 align=left>   	Function to Evaluate for accuracy 
+          <h5 align=left>   •	model_loss, model_accuracy = model.evaluate(
+          <h5 align=left>   •	    X_test_scaled, y_test_categorical, verbose=2)
+        <p></p>         
+          <h4 align=left>   	Save that model!
+          <h5 align=left>   •	model.save("PulsarStar_NN_Model.h5")</p>
+        <p><em>**Neural Net models are more dynamic in the abililty to adjust the input, 
+              hidden, output layers with number of hidden nodes and type of activation.
+              Also, the model can be adjusted how it is compiled based on how its optimized, loss, and
+              metrics style. Further depths on model fitting specifications tell the created model
+              how to train on the given dataset with shuffle and amount of epochs.
+              Each methodically step in the building model process can be adjusted for optimal results.
+            </em></p>
+      </div>
+    </div>
+    <hr>
+    <h2>Model Accuracy and Predict Outcome on Test Data</h2>
+    <div class="row">
+      <div class="column">
+        <image src="PNG/NNmodelAccuracy.png"style="width:100%;"class="center"></image>
+         <p><em> *Accuracy is efficiently high without signs of over fitting, </em></p>
+      </div>
+      <div class="column">
+      <image src="PNG/predictResults.png"style="width:90%;"class="center"></image>
+      <p><em>Prediction and Actual Outcome print out. </em></p>
+      </div>
+    </div>
+    <hr>
+    <h2>Total Count and Percentages of Pulsars Neural Net Predictions </h2>
+    <div class="row">   
+      <div class="column">
+        <image src="PNG/AGG_PredictDF.png"style="width:100%;"class="right"></image>
+      </div>
+      <div class="column">
+        <image src="PNG/doubleAxis_predict.png"style="width:99%;"class="right"></image>
+      </div>
+    </div>
+    <hr>
+    <h2>Aggregated Percentages of Actual and Predictive Outcomes</h2>
+    <div class="row"> 
+      <div class="column">
+        <image src="PNG/AGG_ComparisonDF.png"style="width:100%;"class="right"></image>
+      </div>
+      <div class="column">
+        <image src="PNG/CompBarChart.png"style="width:100%;"class="right"></image>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
+</body>
+<hr>
+<!--Footer Section-->
+<div>
+  <footer class="footer mt-auto py-3">
+  <div class="footercontainer">
+  
+  <li class="text-muted">Developer GitHub Link: <a href = "https://github.com/CARA-ROBERTS/PulsarStars_MachineLearning_Portfolio"
+    class="text-muted">https://github.com/CARA-ROBERTS/PulsarStars_MachineLearning_Portfolio</a></li>
+  <li class="text-muted">Datasource: <a href = "https://www.kaggle.com/pavanraj159/predicting-a-pulsar-star#pulsar_stars.csv"
+     class="text-muted">https://www.kaggle.com/pavanraj159/predicting-a-pulsar-star#pulsar_stars.csv</a></li>
+  <li class="text-muted" id="footer-text">Developer: Cara Roberts </li>
+    </div>
+  </footer>
+  </div>
+  </html>
